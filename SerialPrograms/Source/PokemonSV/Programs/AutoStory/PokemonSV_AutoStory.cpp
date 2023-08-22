@@ -818,7 +818,7 @@ void AutoStory::program(SingleSwitchProgramEnvironment& env, BotBaseContext& con
 
         while (true){
             realign_player(env, context, PlayerRealignMode::REALIGN_NEW_MARKER, 230, 70, 100);
-            if (!overworld_navigation(env, context, NavigationStopCondition::STOP_DIALOG, NavigationMovementMode::DIRECTIONAL_ONLY, 128, 0, 20)){
+            if (!overworld_navigation(env, context, NavigationStopCondition::STOP_DIALOG, NavigationMovementMode::DIRECTIONAL_ONLY, 128, 0)){
                 context.wait_for_all_requests();
                 env.console.log("Did not reach cliff, resetting from checkpoint...", COLOR_RED);
                 env.console.overlay().add_log("Did not reach cliff, reset", COLOR_RED);
@@ -1046,7 +1046,7 @@ void AutoStory::program(SingleSwitchProgramEnvironment& env, BotBaseContext& con
         env.console.log("Start Segment 07: Go to Mesagoza South", COLOR_ORANGE);
         env.console.overlay().add_log("Start Segment 07: Go to Mesagoza South", COLOR_ORANGE);
 
-        // Open Mystery Gift menu, delete later
+        // Mystery Gift, delete later
         enter_menu_from_overworld(env, context, 2);
         pbf_press_button(context, BUTTON_A, 20, 4 * TICKS_PER_SECOND);
         pbf_press_dpad(context, DPAD_UP, 20, 105);
