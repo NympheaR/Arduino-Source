@@ -274,6 +274,12 @@ bool overworld_navigation(SingleSwitchProgramEnvironment& env, BotBaseContext& c
     uint8_t x, uint8_t y,
     uint16_t seconds_timeout = 60, uint16_t seconds_realign = 60
 ){
+    bool should_realign = true;
+    if (seconds_timeout <= seconds_realign){
+        seconds_realign = seconds_timeout;
+        should_realign = false;
+    }
+
     while (true){
         NormalBattleMenuWatcher battle(COLOR_BLUE);
         DialogBoxWatcher        dialog(COLOR_RED, true);
@@ -282,7 +288,7 @@ bool overworld_navigation(SingleSwitchProgramEnvironment& env, BotBaseContext& c
         int ret = run_until(
             env.console, context,
             [&](BotBaseContext& context){
-                for (int i = 0; i < seconds_timeout / seconds_realign + 1; i++){
+                for (int i = 0; i < seconds_timeout / seconds_realign; i++){
                     ssf_press_left_joystick(context, x, y, 0, seconds_realign * TICKS_PER_SECOND);
                     if (movement_mode == NavigationMovementMode::DIRECTIONAL_ONLY){
                         pbf_wait(context, seconds_realign * TICKS_PER_SECOND);
@@ -291,7 +297,9 @@ bool overworld_navigation(SingleSwitchProgramEnvironment& env, BotBaseContext& c
                             pbf_press_button(context, BUTTON_A, 20, 105);
                         }
                     }
-                    realign_player(env, context, PlayerRealignMode::REALIGN_OLD_MARKER);
+                    if (should_realign){
+                        realign_player(env, context, PlayerRealignMode::REALIGN_OLD_MARKER);
+                    }
                 }
             },
             {battle, dialog}
@@ -651,12 +659,12 @@ void AutoStory::program(SingleSwitchProgramEnvironment& env, BotBaseContext& con
 
         while (true){
             realign_player(env, context, PlayerRealignMode::REALIGN_NEW_MARKER, 220, 245, 50);
-            pbf_move_left_joystick(context, 128, 0, 16 * TICKS_PER_SECOND, 4 * TICKS_PER_SECOND);
-            realign_player(env, context, PlayerRealignMode::REALIGN_NEW_MARKER, 230, 25, 1 * TICKS_PER_SECOND);
-            pbf_move_left_joystick(context, 140, 0, 5 * TICKS_PER_SECOND, 20);
-            pbf_move_left_joystick(context, 170, 25, 55, 20);
-            pbf_move_left_joystick(context, 130, 0, 2 * TICKS_PER_SECOND, 20);
-            if (!overworld_navigation(env, context, NavigationStopCondition::STOP_DIALOG, NavigationMovementMode::DIRECTIONAL_SPAM_A, 135, 0, 8)){
+            pbf_move_left_joystick(context, 128, 0, 4 * TICKS_PER_SECOND, 1 * TICKS_PER_SECOND);
+            realign_player(env, context, PlayerRealignMode::REALIGN_NEW_MARKER, 255, 128, 50);
+            pbf_move_left_joystick(context, 128, 0, 4 * TICKS_PER_SECOND, 1 * TICKS_PER_SECOND);
+            realign_player(env, context, PlayerRealignMode::REALIGN_NEW_MARKER, 255, 60, 50);
+            pbf_move_left_joystick(context, 128, 0, 4 * TICKS_PER_SECOND, 2 * TICKS_PER_SECOND);
+            if (!overworld_navigation(env, context, NavigationStopCondition::STOP_DIALOG, NavigationMovementMode::DIRECTIONAL_SPAM_A, 128, 0, 8)){
                 context.wait_for_all_requests();
                 env.console.log("Did not talk to Nemona at beach, resetting from checkpoint...", COLOR_RED);
                 env.console.overlay().add_log("Can't find Nemona, reset", COLOR_RED);
