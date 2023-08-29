@@ -40,6 +40,7 @@
 #include "Programs/FastCodeEntry/PokemonSV_VideoFastCodeEntry.h"
 
 #include "Programs/ShinyHunting/PokemonSV_ShinyHunt-AreaZeroPlatform.h"
+#include "Programs/ShinyHunting/PokemonSV_ShinyHunt-Scatterbug.h"
 
 #include "Programs/AutoStory/PokemonSV_AutoStory.h"
 
@@ -110,6 +111,9 @@ std::vector<PanelEntry> PanelListFactory::make_panels() const{
 
     ret.emplace_back("---- Shiny Hunting ----");
     ret.emplace_back(make_single_switch_program<ShinyHuntAreaZeroPlatform_Descriptor, ShinyHuntAreaZeroPlatform>());
+    if (PreloadSettings::instance().DEVELOPER_MODE){
+        ret.emplace_back(make_single_switch_program<ShinyHuntScatterbug_Descriptor, ShinyHuntScatterbug>());
+    }
 
     ret.emplace_back("---- Story Automation ----");
     ret.emplace_back(make_single_switch_program<AutoStory_Descriptor, AutoStory>());

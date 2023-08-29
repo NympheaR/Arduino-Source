@@ -637,6 +637,7 @@ SOURCES += \
     Source/PokemonSV/Inference/Dialogs/PokemonSV_DialogArrowDetector.cpp \
     Source/PokemonSV/Inference/Dialogs/PokemonSV_DialogDetector.cpp \
     Source/PokemonSV/Inference/Dialogs/PokemonSV_GradientArrowDetector.cpp \
+    Source/PokemonSV/Inference/Map/PokemonSV_MapPokeCenterIconDetector.cpp \
     Source/PokemonSV/Inference/Overworld/PokemonSV_AreaZeroSkyDetector.cpp \
     Source/PokemonSV/Inference/Overworld/PokemonSV_LetsGoHpReader.cpp \
     Source/PokemonSV/Inference/Overworld/PokemonSV_LetsGoKillDetector.cpp \
@@ -714,6 +715,7 @@ SOURCES += \
     Source/PokemonSV/Programs/ShinyHunting/PokemonSV_AreaZeroPlatform.cpp \
     Source/PokemonSV/Programs/ShinyHunting/PokemonSV_LetsGoTools.cpp \
     Source/PokemonSV/Programs/ShinyHunting/PokemonSV_ShinyHunt-AreaZeroPlatform.cpp \
+    Source/PokemonSV/Programs/ShinyHunting/PokemonSV_ShinyHunt-Scatterbug.cpp \
     Source/PokemonSV/Programs/TeraRaids/PokemonSV_AutoHost.cpp \
     Source/PokemonSV/Programs/TeraRaids/PokemonSV_AutoHostLobbyWaiter.cpp \
     Source/PokemonSV/Programs/TeraRaids/PokemonSV_AutoHostTools.cpp \
@@ -928,6 +930,7 @@ SOURCES += \
     Source/Tests/PokemonSwSh_Tests.cpp \
     Source/Tests/TestMap.cpp \
     Source/Tests/TestUtils.cpp \
+    Source/ZeldaTotK/Programs/ZeldaTotK_BowItemDuper.cpp \
     Source/ZeldaTotK/Programs/ZeldaTotK_MineruItemDuper.cpp \
     Source/ZeldaTotK/Programs/ZeldaTotK_ParaglideItemDuper.cpp \
     Source/ZeldaTotK/Programs/ZeldaTotK_SurfItemDuper.cpp \
@@ -935,8 +938,7 @@ SOURCES += \
     Source/ZeldaTotK/ZeldaTotK_Panels.cpp \
     Source/ZeldaTotK/ZeldaTotK_Panels.h \
     Source/ZeldaTotK/ZeldaTotK_Settings.cpp \
-    Source/ZeldaTotK/ZeldaTotK_Settings.h \
-    Source/ZeldaTotK/Programs/ZeldaTotK_BowItemDuper.cpp
+    Source/ZeldaTotK/ZeldaTotK_Settings.h
 
 HEADERS += \
     ../3rdParty/QtWavFile/WavFile.h \
@@ -1668,6 +1670,7 @@ HEADERS += \
     Source/PokemonSV/Inference/Dialogs/PokemonSV_DialogArrowDetector.h \
     Source/PokemonSV/Inference/Dialogs/PokemonSV_DialogDetector.h \
     Source/PokemonSV/Inference/Dialogs/PokemonSV_GradientArrowDetector.h \
+    Source/PokemonSV/Inference/Map/PokemonSV_MapPokeCenterIconDetector.h \
     Source/PokemonSV/Inference/Overworld/PokemonSV_AreaZeroSkyDetector.h \
     Source/PokemonSV/Inference/Overworld/PokemonSV_LetsGoHpReader.h \
     Source/PokemonSV/Inference/Overworld/PokemonSV_LetsGoKillDetector.h \
@@ -1747,6 +1750,7 @@ HEADERS += \
     Source/PokemonSV/Programs/ShinyHunting/PokemonSV_AreaZeroPlatform.h \
     Source/PokemonSV/Programs/ShinyHunting/PokemonSV_LetsGoTools.h \
     Source/PokemonSV/Programs/ShinyHunting/PokemonSV_ShinyHunt-AreaZeroPlatform.h \
+    Source/PokemonSV/Programs/ShinyHunting/PokemonSV_ShinyHunt-Scatterbug.h \
     Source/PokemonSV/Programs/TeraRaids/PokemonSV_AutoHost.h \
     Source/PokemonSV/Programs/TeraRaids/PokemonSV_AutoHostLobbyWaiter.h \
     Source/PokemonSV/Programs/TeraRaids/PokemonSV_AutoHostTools.h \

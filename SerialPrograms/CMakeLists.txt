@@ -529,6 +529,8 @@ file(GLOB MAIN_SOURCES
     Source/CommonFramework/VideoPipeline/Backends/CameraImplementations.h
     Source/CommonFramework/VideoPipeline/Backends/CameraWidgetQt5.cpp
     Source/CommonFramework/VideoPipeline/Backends/CameraWidgetQt5.h
+    Source/CommonFramework/VideoPipeline/Backends/CameraWidgetQt6.5.cpp
+    Source/CommonFramework/VideoPipeline/Backends/CameraWidgetQt6.5.h
     Source/CommonFramework/VideoPipeline/Backends/CameraWidgetQt6.cpp
     Source/CommonFramework/VideoPipeline/Backends/CameraWidgetQt6.h
     Source/CommonFramework/VideoPipeline/Backends/VideoToolsQt5.cpp
@@ -1275,6 +1277,8 @@ file(GLOB MAIN_SOURCES
     Source/PokemonSV/Inference/Dialogs/PokemonSV_DialogDetector.h
     Source/PokemonSV/Inference/Dialogs/PokemonSV_GradientArrowDetector.cpp
     Source/PokemonSV/Inference/Dialogs/PokemonSV_GradientArrowDetector.h
+    Source/PokemonSV/Inference/Map/PokemonSV_MapPokeCenterIconDetector.cpp
+    Source/PokemonSV/Inference/Map/PokemonSV_MapPokeCenterIconDetector.h
     Source/PokemonSV/Inference/Overworld/PokemonSV_AreaZeroSkyDetector.cpp
     Source/PokemonSV/Inference/Overworld/PokemonSV_AreaZeroSkyDetector.h
     Source/PokemonSV/Inference/Overworld/PokemonSV_LetsGoHpReader.cpp
@@ -1431,6 +1435,8 @@ file(GLOB MAIN_SOURCES
     Source/PokemonSV/Programs/ShinyHunting/PokemonSV_LetsGoTools.h
     Source/PokemonSV/Programs/ShinyHunting/PokemonSV_ShinyHunt-AreaZeroPlatform.cpp
     Source/PokemonSV/Programs/ShinyHunting/PokemonSV_ShinyHunt-AreaZeroPlatform.h
+    Source/PokemonSV/Programs/ShinyHunting/PokemonSV_ShinyHunt-Scatterbug.cpp
+    Source/PokemonSV/Programs/ShinyHunting/PokemonSV_ShinyHunt-Scatterbug.h
     Source/PokemonSV/Programs/TeraRaids/PokemonSV_AutoHost.cpp
     Source/PokemonSV/Programs/TeraRaids/PokemonSV_AutoHost.h
     Source/PokemonSV/Programs/TeraRaids/PokemonSV_AutoHostLobbyWaiter.cpp
@@ -1871,10 +1877,6 @@ file(GLOB MAIN_SOURCES
     Source/Tests/TestMap.h
     Source/Tests/TestUtils.cpp
     Source/Tests/TestUtils.h
-    Source/ZeldaTotK/ZeldaTotK_Panels.cpp
-    Source/ZeldaTotK/ZeldaTotK_Panels.h
-    Source/ZeldaTotK/ZeldaTotK_Settings.cpp
-    Source/ZeldaTotK/ZeldaTotK_Settings.h
     Source/ZeldaTotK/Programs/ZeldaTotK_BowItemDuper.cpp
     Source/ZeldaTotK/Programs/ZeldaTotK_BowItemDuper.h
     Source/ZeldaTotK/Programs/ZeldaTotK_MineruItemDuper.cpp
@@ -1885,6 +1887,10 @@ file(GLOB MAIN_SOURCES
     Source/ZeldaTotK/Programs/ZeldaTotK_SurfItemDuper.h
     Source/ZeldaTotK/Programs/ZeldaTotK_WeaponDuper.cpp
     Source/ZeldaTotK/Programs/ZeldaTotK_WeaponDuper.h
+    Source/ZeldaTotK/ZeldaTotK_Panels.cpp
+    Source/ZeldaTotK/ZeldaTotK_Panels.h
+    Source/ZeldaTotK/ZeldaTotK_Settings.cpp
+    Source/ZeldaTotK/ZeldaTotK_Settings.h
 )
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}../../ FILES ${MAIN_SOURCES})
 add_executable(SerialPrograms WIN32 ${MAIN_SOURCES})
