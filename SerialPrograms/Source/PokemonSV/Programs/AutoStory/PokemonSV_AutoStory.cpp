@@ -473,6 +473,9 @@ void AutoStory::program(SingleSwitchProgramEnvironment& env, BotBaseContext& con
         config_option(context, 1); // Give Nicknames: Off
         config_option(context, 0); // Vertical Camera Controls: Regular
         config_option(context, 0); // Horiztontal Camera Controls: Regular
+        config_option(context, 0); // Camera Support: On
+        config_option(context, 0); // Camera Interpolation: Normal
+        config_option(context, 0); // Camera Distance: Close
         config_option(context, 1); // Autosave: Off
         config_option(context, 1); // Show Nicknames: Don't show
         config_option(context, 1); // Skip Cutscenes: On
@@ -480,7 +483,7 @@ void AutoStory::program(SingleSwitchProgramEnvironment& env, BotBaseContext& con
         config_option(context, 0); // Sound Effects: 10
         config_option(context, 0); // Pokemon Cries: 10
         config_option(context, 0); // Controller Rumble: On
-        config_option(context, 1); // Helpeing Functions: Off
+        config_option(context, 1); // Helping Functions: Off
         pbf_mash_button(context, BUTTON_A, 1 * TICKS_PER_SECOND);
         clear_dialog(env, context, ClearDialogMode::STOP_TIMEOUT, 5);
         pbf_mash_button(context, BUTTON_B, 2 * TICKS_PER_SECOND);
@@ -1046,15 +1049,15 @@ void AutoStory::program(SingleSwitchProgramEnvironment& env, BotBaseContext& con
         env.console.log("Start Segment 07: Go to Mesagoza South", COLOR_ORANGE);
         env.console.overlay().add_log("Start Segment 07: Go to Mesagoza South", COLOR_ORANGE);
 
-        // Mystery Gift, delete later
-        enter_menu_from_overworld(env, context, 2);
-        pbf_press_button(context, BUTTON_A, 20, 4 * TICKS_PER_SECOND);
-        pbf_press_dpad(context, DPAD_UP, 20, 105);
-        pbf_press_button(context, BUTTON_A, 20, 4 * TICKS_PER_SECOND);
-        pbf_press_dpad(context, DPAD_DOWN, 20, 105);
-        pbf_press_button(context, BUTTON_A, 20, 4 * TICKS_PER_SECOND);
-        pbf_press_button(context, BUTTON_A, 20, 10 * TICKS_PER_SECOND);
-        clear_dialog(env, context, ClearDialogMode::STOP_TIMEOUT, 10);
+        // // Mystery Gift, delete later
+        // enter_menu_from_overworld(env, context, 2);
+        // pbf_press_button(context, BUTTON_A, 20, 4 * TICKS_PER_SECOND);
+        // pbf_press_dpad(context, DPAD_UP, 20, 105);
+        // pbf_press_button(context, BUTTON_A, 20, 4 * TICKS_PER_SECOND);
+        // pbf_press_dpad(context, DPAD_DOWN, 20, 105);
+        // pbf_press_button(context, BUTTON_A, 20, 4 * TICKS_PER_SECOND);
+        // pbf_press_button(context, BUTTON_A, 20, 10 * TICKS_PER_SECOND);
+        // clear_dialog(env, context, ClearDialogMode::STOP_TIMEOUT, 10);
 
         context.wait_for_all_requests();
         env.console.log("End Segment 07: Go to Mesagoza South", COLOR_GREEN);

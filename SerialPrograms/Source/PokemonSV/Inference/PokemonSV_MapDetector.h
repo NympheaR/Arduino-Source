@@ -11,6 +11,7 @@
 #include "CommonFramework/ImageTools/ImageBoxes.h"
 #include "CommonFramework/InferenceInfra/VisualInferenceCallback.h"
 #include "CommonFramework/Inference/VisualDetector.h"
+#include "PokemonSV/Inference/PokemonSV_WhiteButtonDetector.h"
 
 namespace PokemonAutomation{
 namespace NintendoSwitch{
@@ -94,7 +95,7 @@ public:
     bool map_in_fixed_view() const { return m_in_fixed_view; }
 
 private:
-    MapExitWatcher m_exit_watcher;
+    WhiteButtonWatcher  m_exit_watcher;
     MapFixedViewWatcher m_fixed_view_watcher;
     MapRotatedViewWatcher m_rotated_view_watcher;
 

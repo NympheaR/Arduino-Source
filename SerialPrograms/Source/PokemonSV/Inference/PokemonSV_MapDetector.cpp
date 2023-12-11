@@ -111,7 +111,7 @@ bool MapExitDetector::detect(const ImageViewRGB32& frame) const{
 
 MapFixedViewDetector::MapFixedViewDetector(Color color)
     : m_color(color)
-    , m_arrow_box(0.165, 0.724, 0.014, 0.028)
+    , m_arrow_box(0.165, 0.712, 0.014, 0.040)
 {}
 void MapFixedViewDetector::make_overlays(VideoOverlaySet& items) const{
     items.add(m_color, m_arrow_box);
@@ -139,7 +139,7 @@ bool MapFixedViewDetector::detect(const ImageViewRGB32& frame) const{
 
 MapRotatedViewDetector::MapRotatedViewDetector(Color color)
     : m_color(color)
-    , m_arrow_box(0.157, 0.732, 0.029, 0.027)
+    , m_arrow_box(0.157, 0.720, 0.029, 0.039)
 {}
 void MapRotatedViewDetector::make_overlays(VideoOverlaySet& items) const{
     items.add(m_color, m_arrow_box);
@@ -167,7 +167,7 @@ bool MapRotatedViewDetector::detect(const ImageViewRGB32& frame) const{
 
 MapWatcher::MapWatcher(Color color)
 : VisualInferenceCallback("MapWatcher")
-, m_exit_watcher(color), m_fixed_view_watcher(color), m_rotated_view_watcher(color){}
+, m_exit_watcher(COLOR_RED, WhiteButton::ButtonY, {0.800, 0.118, 0.030, 0.060}), m_fixed_view_watcher(color), m_rotated_view_watcher(color){}
 
 void MapWatcher::make_overlays(VideoOverlaySet& items) const{
     m_exit_watcher.make_overlays(items);
