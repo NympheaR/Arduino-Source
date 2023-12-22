@@ -1391,6 +1391,8 @@ file(GLOB MAIN_SOURCES
     Source/PokemonSV/Programs/General/PokemonSV_ClothingBuyer.h
     Source/PokemonSV/Programs/General/PokemonSV_ESPTraining.cpp
     Source/PokemonSV/Programs/General/PokemonSV_ESPTraining.h
+    Source/PokemonSV/Programs/General/PokemonSV_FlyingTrailFarmer.cpp
+    Source/PokemonSV/Programs/General/PokemonSV_FlyingTrailFarmer.h
     Source/PokemonSV/Programs/General/PokemonSV_GimmighoulChestFarmer.cpp
     Source/PokemonSV/Programs/General/PokemonSV_GimmighoulChestFarmer.h
     Source/PokemonSV/Programs/General/PokemonSV_GimmighoulRoamingFarmer.cpp

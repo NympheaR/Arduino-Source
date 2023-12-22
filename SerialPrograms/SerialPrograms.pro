@@ -693,6 +693,7 @@ SOURCES += \
     Source/PokemonSV/Programs/General/PokemonSV_AutonomousBallThrower.cpp \
     Source/PokemonSV/Programs/General/PokemonSV_ClothingBuyer.cpp \
     Source/PokemonSV/Programs/General/PokemonSV_ESPTraining.cpp \
+    Source/PokemonSV/Programs/General/PokemonSV_FlyingTrailFarmer.cpp \
     Source/PokemonSV/Programs/General/PokemonSV_GimmighoulChestFarmer.cpp \
     Source/PokemonSV/Programs/General/PokemonSV_GimmighoulRoamingFarmer.cpp \
     Source/PokemonSV/Programs/General/PokemonSV_LPFarmer.cpp \
@@ -1729,6 +1730,7 @@ HEADERS += \
     Source/PokemonSV/Programs/General/PokemonSV_AutonomousBallThrower.h \
     Source/PokemonSV/Programs/General/PokemonSV_ClothingBuyer.h \
     Source/PokemonSV/Programs/General/PokemonSV_ESPTraining.h \
+    Source/PokemonSV/Programs/General/PokemonSV_FlyingTrailFarmer.h \
     Source/PokemonSV/Programs/General/PokemonSV_GimmighoulChestFarmer.h \
     Source/PokemonSV/Programs/General/PokemonSV_GimmighoulRoamingFarmer.h \
     Source/PokemonSV/Programs/General/PokemonSV_LPFarmer.h \
